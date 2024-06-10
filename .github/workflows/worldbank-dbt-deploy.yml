@@ -1,0 +1,20 @@
+name: dbt deployment for worldbank
+
+# Triggers on push to main branch
+# or Pull Request to any branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  deploy:
+    name: dbt list 
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: list dbt models
+      run: dbt list
