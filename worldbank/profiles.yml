@@ -1,0 +1,13 @@
+worldbank:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost 
+      user: root
+      password: root
+      port: 5432
+      dbname: worldbank
+      schema: public
+      threads: 1
+      connect_timeout: 30

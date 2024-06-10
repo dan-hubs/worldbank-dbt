@@ -14,7 +14,19 @@ jobs:
   deploy:
     name: dbt list 
     runs-on: ubuntu-latest
-
+    
     steps:
+    - uses: actions/checkout@v2
+      with:
+       fetch-depth: 0
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+       python-version: '3.8'
+    - name: install dbt
+      run: pip install dbt-core
     - name: list dbt models
-      run: dbt list
+      uses: mwhitaker/dbt-action@master
+      with:
+        dbt_command: "dbt list --profiles-dir ."
+        dbt_project_folder: "worldbank"
