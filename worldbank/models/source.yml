@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: worldbank
+    schema: public
+    tables:
+      - name: raw_indicators
+        identifier: raw_indicators
+        description: None

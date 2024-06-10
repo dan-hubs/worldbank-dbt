@@ -1,0 +1,23 @@
+
+version: 2
+
+models:
+  - name: stg_indicators
+    description: "Staging data for GDP indicators from the WorldBank API"
+    columns:
+      - name: "date"
+        description: "The year associated with the GDP of a country"
+        tests:
+          - not_null
+
+  - name: countries_gdp
+    description: "Provides a summary of GDP and Growth since the year 2000 for various countries"
+    columns:
+      - name: "gdp"
+        description: "GDP value for a country"
+        tests: 
+          - not_null
+      - name: "country"
+        description: "Name of a country"
+        tests: 
+          - not_null
